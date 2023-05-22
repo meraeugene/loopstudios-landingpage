@@ -1,0 +1,1024 @@
+//colors
+$White: hsl(0, 0%, 100%);
+$Black: hsl(0, 0%, 0%);
+$Dark-Gray: hsl(0, 0%, 55%);
+$Very-Dark-Gray: hsl(0, 0%, 41%);
+
+//fonts
+$Weight-300: 300;
+$Weight-400: 400;
+$Alata: "Alata", sans-serif;
+$Josefin-Sans: "Josefin Sans", sans-serif;
+
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  .hero {
+    height: 85vh;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url(images/desktop/image-hero.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 5em 7em;
+
+    .container {
+      .nav-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 5em;
+
+        .logo {
+          width: 150px;
+        }
+
+        #navBtn {
+          display: none;
+        }
+
+        #closeBtn {
+          display: none;
+        }
+
+        ul {
+          display: flex;
+          align-items: center;
+          gap: 2em;
+          list-style: none;
+
+          li a {
+            text-decoration: none;
+            color: $White;
+            font-family: $Alata;
+            font-size: 1rem;
+            position: relative;
+          }
+
+          li a::after {
+            content: "";
+            width: 0px;
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            height: 2px;
+            background-color: $White;
+            top: 28px;
+            transition: 0.3s ease-in-out;
+          }
+
+          li a:hover::after {
+            width: 80%;
+          }
+        }
+      }
+    }
+
+    .hero-title {
+      border: 2px solid $White;
+      display: inline-block;
+      padding: 2em 5em 1.5em 2em;
+      h1 {
+        font-size: 4rem;
+        font-weight: $Weight-400;
+        color: $White;
+        font-family: $Josefin-Sans;
+      }
+    }
+  }
+
+  .info {
+    margin: 7em;
+    .container {
+      .flex {
+        position: relative;
+
+        .info-container {
+          color: $Black;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+          background-color: $White;
+          padding: 5em;
+          padding-bottom: 0;
+          padding-right: 0;
+          width: 100%;
+          max-width: 550px;
+
+          h1 {
+            font-family: $Josefin-Sans;
+            font-size: 2.8rem;
+            font-weight: $Weight-400;
+            line-height: 1;
+            margin-bottom: 0.5em;
+          }
+
+          p {
+            font-size: 1rem;
+            font-family: $Alata;
+            color: $Dark-Gray;
+            line-height: 1.5;
+            font-weight: $Weight-300;
+          }
+        }
+      }
+    }
+  }
+
+  .creations {
+    .container {
+      padding: 7em;
+      padding-top: 0;
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h1 {
+          font-family: $Josefin-Sans;
+          font-size: 2.5rem;
+          font-weight: $Weight-400;
+        }
+        .button-div {
+          .see-all-btn {
+            padding: 0.6em 2.5em;
+            border: 2px solid $Very-Dark-Gray;
+            color: $Black;
+            background-color: $White;
+            transition: 0.3s;
+            cursor: pointer;
+            font-family: $Alata;
+            letter-spacing: 0.3em;
+            font-size: 0.9rem;
+          }
+          .see-all-btn:hover {
+            background-color: $Black;
+            color: $White;
+            border: 2px solid $Black;
+          }
+        }
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2em;
+        margin-top: 3em;
+
+        .card {
+          min-height: 450px;
+          height: 100%;
+        }
+
+        .card-1 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(images/desktop/image-deep-earth.jpg);
+          background-position: center;
+          background-size: cover;
+          position: relative;
+        }
+
+        .card-1::after {
+          color: $White;
+          font-family: $Josefin-Sans;
+          font-weight: $Weight-400;
+          font-size: 1.8rem;
+          width: 50%;
+          position: absolute;
+          bottom: 30px;
+          left: 40px;
+          content: "DEEP EARTH";
+        }
+
+        .card-1:hover {
+          background-image: linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.8)
+            ),
+            url(/images/desktop/image-deep-earth.jpg);
+          cursor: pointer;
+        }
+
+        .card-1:hover::after {
+          color: $Black !important;
+          opacity: 1;
+          transition: 0.5s;
+        }
+
+        .card-2 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(/images/desktop/image-night-arcade.jpg);
+          background-position: center;
+          background-size: cover;
+          position: relative;
+        }
+
+        .card-2::after {
+          color: $White;
+          font-family: $Josefin-Sans;
+          font-weight: $Weight-400;
+          font-size: 1.8rem;
+          width: 50%;
+          position: absolute;
+          bottom: 30px;
+          left: 40px;
+          content: "NIGHT ARCADE";
+        }
+
+        .card-2:hover {
+          background-image: linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.8)
+            ),
+            url(/images/desktop/image-night-arcade.jpg);
+          cursor: pointer;
+        }
+
+        .card-2:hover::after {
+          color: $Black !important;
+          opacity: 1;
+          transition: 0.5s;
+        }
+
+        .card-3 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(/images/desktop/image-soccer-team.jpg);
+          background-position: center;
+          background-size: cover;
+          position: relative;
+        }
+
+        .card-3::after {
+          color: $White;
+          font-family: $Josefin-Sans;
+          font-weight: $Weight-400;
+          font-size: 1.8rem;
+          width: 80%;
+          position: absolute;
+          bottom: 30px;
+          left: 40px;
+          content: "SOCCER TEAM VR";
+        }
+
+        .card-3:hover {
+          background-image: linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.8)
+            ),
+            url(/images/desktop/image-soccer-team.jpg);
+          cursor: pointer;
+        }
+
+        .card-3:hover::after {
+          color: $Black !important;
+          opacity: 1;
+          transition: 0.5s;
+        }
+
+        .card-4 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(/images/desktop/image-grid.jpg);
+          background-position: center;
+          background-size: cover;
+          position: relative;
+        }
+
+        .card-4::after {
+          color: $White;
+          font-family: $Josefin-Sans;
+          font-weight: $Weight-400;
+          font-size: 1.8rem;
+          width: 50%;
+          position: absolute;
+          bottom: 30px;
+          left: 40px;
+          content: "THE GRID";
+        }
+
+        .card-4:hover {
+          background-image: linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.8)
+            ),
+            url(/images/desktop/image-grid.jpg);
+          cursor: pointer;
+        }
+
+        .card-4:hover::after {
+          color: $Black !important;
+          opacity: 1;
+          transition: 0.5s;
+        }
+
+        .card-5 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(/images/desktop/image-from-above.jpg);
+          background-position: center;
+          background-size: cover;
+          position: relative;
+        }
+
+        .card-5::after {
+          color: $White;
+          font-family: $Josefin-Sans;
+          font-weight: $Weight-400;
+          font-size: 1.8rem;
+          width: 70%;
+          position: absolute;
+          bottom: 30px;
+          left: 40px;
+          content: "FROM UP ABOVE VR";
+        }
+
+        .card-5:hover {
+          background-image: linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.8)
+            ),
+            url(/images/desktop/image-from-above.jpg);
+          cursor: pointer;
+        }
+
+        .card-5:hover::after {
+          color: $Black !important;
+          opacity: 1;
+          transition: 0.5s;
+        }
+
+        .card-6 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(/images/desktop/image-pocket-borealis.jpg);
+          background-position: center;
+          background-size: cover;
+          position: relative;
+        }
+
+        .card-6::after {
+          color: $White;
+          font-family: $Josefin-Sans;
+          font-weight: $Weight-400;
+          font-size: 1.8rem;
+          width: 50%;
+          position: absolute;
+          bottom: 30px;
+          left: 40px;
+          content: "POCKET BOREALIS";
+        }
+
+        .card-6:hover {
+          background-image: linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.8)
+            ),
+            url(/images/desktop/image-pocket-borealis.jpg);
+          cursor: pointer;
+        }
+
+        .card-6:hover::after {
+          color: $Black !important;
+          opacity: 1;
+          transition: 0.5s;
+        }
+
+        .card-7 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(/images/desktop/image-curiosity.jpg);
+          background-position: center;
+          background-size: cover;
+          position: relative;
+        }
+
+        .card-7::after {
+          color: $White;
+          font-family: $Josefin-Sans;
+          font-weight: $Weight-400;
+          font-size: 1.8rem;
+          width: 50%;
+          position: absolute;
+          bottom: 30px;
+          left: 40px;
+          content: "THE CURIOSITY";
+        }
+
+        .card-7:hover::after {
+          color: $Black !important;
+          opacity: 1;
+          transition: 0.5s;
+        }
+
+        .card-7:hover {
+          background-image: linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.8)
+            ),
+            url(/images/desktop/image-curiosity.jpg);
+          cursor: pointer;
+        }
+
+        .card-8 {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.1),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url(/images/desktop/image-fisheye.jpg);
+          background-position: center;
+          background-size: cover;
+          position: relative;
+        }
+
+        .card-8::after {
+          color: $White;
+          font-family: $Josefin-Sans;
+          font-weight: $Weight-400;
+          font-size: 1.8rem;
+          width: 50%;
+          position: absolute;
+          bottom: 30px;
+          left: 40px;
+          content: "MAKE IT FISHEYE";
+        }
+
+        .card-8:hover {
+          background-image: linear-gradient(
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.8)
+            ),
+            url(/images/desktop/image-fisheye.jpg);
+          cursor: pointer;
+        }
+
+        .card-8:hover::after {
+          color: $Black !important;
+          opacity: 1;
+          transition: 0.5s;
+        }
+      }
+
+      .see-all-btn {
+        display: none;
+      }
+    }
+  }
+
+  footer {
+    background-color: $Black;
+    color: $White;
+
+    p {
+      font-family: $Alata;
+      font-weight: $Weight-300;
+      font-size: 0.9rem;
+      color: $Very-Dark-Gray;
+    }
+
+    .container {
+      padding: 2em 7em 2em 7em;
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1em;
+
+        .logo {
+          img {
+            width: 120px;
+          }
+        }
+
+        .icons {
+          display: flex;
+          align-items: center;
+          gap: 0.8em;
+
+          .img-container {
+            position: relative;
+            cursor: pointer;
+
+            img {
+              width: 100%;
+              aspect-ratio: 4/3;
+              object-fit: contain;
+            }
+          }
+
+          .img-container::after {
+            content: "";
+            width: 0%;
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            transform: translateX(-50%);
+            height: 2px;
+            background-color: $White;
+            transition: 0.3s ease-in-out;
+          }
+
+          .img-container:hover::after {
+            width: 100%;
+          }
+        }
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .icons-desktop {
+          display: none;
+        }
+
+        .menu-sections {
+          ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 1.5em;
+
+            li a {
+              text-decoration: none;
+              color: $White;
+              font-family: $Alata;
+              font-size: 0.9rem;
+              font-weight: $Weight-300;
+              position: relative;
+            }
+
+            li a::after {
+              content: "";
+              width: 0%;
+              position: absolute;
+              left: 50%;
+              bottom: -5px;
+              transform: translateX(-50%);
+              height: 2px;
+              background-color: $White;
+              transition: 0.3s ease-in-out;
+            }
+
+            li a:hover::after {
+              width: 80%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// breakpoints
+@media screen and (max-width: 768px) {
+  body {
+    .hero {
+      padding: 0em;
+
+      .nav-flex {
+        padding-bottom: 0em !important;
+        height: 100vh;
+        width: 100%;
+        display: block !important;
+        padding: 2em 1em;
+        display: hidden;
+
+        .logo {
+          width: 130px !important;
+        }
+
+        .flex-mobile {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .hideNavBtn {
+            display: none !important;
+          }
+
+          .hideCloseBtn {
+            display: none;
+          }
+
+          .showCloseBtn {
+            display: block !important;
+          }
+
+          #navBtn {
+            display: block;
+          }
+        }
+
+        .menu-show {
+          display: flex !important;
+          gap: 1.5em !important;
+          align-items: flex-start !important;
+          flex-direction: column;
+          margin-top: 5em;
+        }
+
+        ul {
+          display: none !important;
+
+          li a {
+            color: $White;
+            font-family: $Josefin-Sans !important;
+            font-size: 1.5rem !important;
+            text-transform: uppercase;
+            font-family: $Weight-300;
+          }
+        }
+      }
+
+      .nav-flex-clicked {
+        background-color: $Black;
+        z-index: 100;
+        position: fixed;
+      }
+
+      .hero-title {
+        padding: 1em;
+        max-width: 300px;
+        width: 100%;
+        margin: auto !important;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+    .info {
+      margin: 3em 1em;
+      .container {
+        position: relative;
+
+        .flex {
+          .img-container-main {
+            img {
+              width: 100%;
+            }
+          }
+          .info-container {
+            position: static;
+            width: 100%;
+            padding: 0em;
+            padding-top: 2em;
+
+            h1 {
+              font-size: 1.9rem;
+              text-align: center;
+            }
+
+            p {
+              text-align: center;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+    .creations {
+      .container {
+        padding: 1em;
+        padding-bottom: 0;
+
+        .see-all-btn {
+          padding: 0.4em 2em;
+          border: 1px solid $Very-Dark-Gray;
+          color: $Black;
+          background-color: $White;
+          transition: 0.3s;
+          cursor: pointer;
+          margin: 2em auto;
+          display: block;
+          font-weight: $Weight-400;
+          font-size: 0.9rem;
+          font-family: $Alata;
+          letter-spacing: 0.2em;
+        }
+
+        .header {
+          flex-direction: column;
+          text-align: center;
+
+          h1 {
+            font-size: 2rem;
+          }
+          button {
+            display: none;
+          }
+        }
+
+        .grid-container {
+          margin-top: 2em;
+          gap: 1em;
+          .card {
+            min-height: 100px;
+            width: 100%;
+            background-size: cover !important;
+          }
+          .card-1 {
+            background-image: url(./images/mobile/image-deep-earth.jpg);
+          }
+          .card-2 {
+            background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0)
+              ),
+              url(/images/mobile/image-night-arcade.jpg);
+          }
+          .card-3 {
+            background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url(./images/mobile/image-soccer-team.jpg);
+          }
+          .card-4 {
+            background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url(./images/mobile/image-grid.jpg);
+          }
+          .card-5 {
+            background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url(./images/mobile/image-from-above.jpg);
+          }
+          .card-6 {
+            background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url(./images/mobile/image-pocket-borealis.jpg);
+          }
+          .card-7 {
+            background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url(./images/mobile/image-curiosity.jpg);
+          }
+          .card-8 {
+            background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url(./images/mobile/image-fisheye.jpg);
+          }
+          .card-1::after {
+            font-size: 1.5rem;
+            bottom: 15px;
+            left: 15px;
+          }
+          .card-2::after {
+            font-size: 1.5rem;
+            bottom: 15px;
+            left: 15px;
+          }
+          .card-3::after {
+            font-size: 1.5rem;
+            bottom: 15px;
+            left: 15px;
+            width: 50%;
+          }
+          .card-4::after {
+            font-size: 1.5rem;
+            bottom: 15px;
+            left: 15px;
+            width: 30%;
+          }
+          .card-5::after {
+            font-size: 1.5rem;
+            bottom: 15px;
+            left: 15px;
+            width: 50%;
+          }
+          .card-6::after {
+            font-size: 1.5rem;
+            bottom: 15px;
+            left: 15px;
+          }
+          .card-7:after {
+            font-size: 1.5rem;
+            bottom: 15px;
+            left: 15px;
+          }
+          .card-8::after {
+            font-size: 1.5rem;
+            bottom: 15px;
+            left: 15px;
+          }
+          .card-1:hover {
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7)
+              ),
+              url(/images/mobile/image-deep-earth.jpg);
+          }
+          .card-2:hover {
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7)
+              ),
+              url(/images/mobile/image-night-arcade.jpg);
+          }
+          .card-3:hover {
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7)
+              ),
+              url(/images/mobile/image-soccer-team.jpg);
+          }
+          .card-4:hover {
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7)
+              ),
+              url(/images/mobile/image-grid.jpg);
+          }
+          .card-5:hover {
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7)
+              ),
+              url(/images/mobile/image-from-above.jpg);
+          }
+          .card-6:hover {
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7)
+              ),
+              url(/images/mobile/image-pocket-borealis.jpg);
+          }
+          .card-7:hover {
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7)
+              ),
+              url(/images/mobile/image-curiosity.jpg);
+          }
+          .card-8:hover {
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7),
+                rgba(255, 255, 255, 0.7)
+              ),
+              url(/images/mobile/image-fisheye.jpg);
+          }
+        }
+      }
+    }
+    footer {
+      .container {
+        padding: 1.5em;
+
+        .top {
+          flex-direction: column;
+          margin-bottom: 0;
+          .logo {
+            img {
+              width: 100px;
+            }
+          }
+          .icons {
+            display: none;
+          }
+        }
+
+        .bottom {
+          flex-direction: column;
+
+          p {
+            font-family: $Alata;
+            font-weight: $Weight-300;
+            font-size: 0.8rem;
+            color: $Very-Dark-Gray;
+          }
+
+          .menu-sections {
+            margin: 1.5em 0 2em 0;
+            ul {
+              flex-direction: column;
+              gap: 0.5em;
+
+              li a {
+                font-size: 0.8rem;
+              }
+            }
+          }
+
+          .icons-desktop {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            margin-bottom: 1em;
+
+            .img-container {
+              position: relative;
+              cursor: pointer;
+
+              img {
+                width: 100%;
+                aspect-ratio: 4/3;
+                object-fit: contain;
+              }
+            }
+
+            .img-container::after {
+              content: "";
+              width: 0%;
+              position: absolute;
+              left: 50%;
+              bottom: -8px;
+              transform: translateX(-50%);
+              height: 2px;
+              background-color: $White;
+              transition: 0.3s ease-in-out;
+            }
+
+            .img-container:hover::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
